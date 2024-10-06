@@ -1,0 +1,17 @@
+server:
+  port: 8090
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: add_request_header_route
+          uri: http://localhost:8139
+          predicates:
+            - Path=/api/**
+#          filters:
+#            - AddRequestHeader=sanwei, swag
+#            - AddRequestParameter=name, blue
+
+#logging:
+#  level:
+#    org.springframework.cloud.gateway: trace
